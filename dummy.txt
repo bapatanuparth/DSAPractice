@@ -1,0 +1,59 @@
+insert r_r          -1 -20 3 4
+insert rec        7 -8 1 3
+insert virtual_rec0 1 1 0 0
+insert virtual_REC0 0 0 11 0
+insert inExistRec_0 1 1 -1 -2
+insert newrec 102 1025 2 3
+insert newrec 1025 102 2 3
+insert newrec 1000 1000 50 3
+insert newrec 1000 1000 5 30
+insert newrec -1 2 3 4
+insert newrec 1 -2 3 4
+insert newrec 1 2 -3 4
+insert newrec 1 2 3 -4
+insert good 700 700 1 1
+remove 700 700 1 1
+regionsearch   11 11                 0 0
+intersections
+
+search r_r
+remove r_r
+remove 1 1 0 0
+
+regionsearch   -5 -5 20 20
+regionsearch   5 5 0 0
+insert goodRect  5  3 56 56
+insert rt 0 0 5 5
+regionsearch   6 2 100 100
+remove rt
+insert goodRect2 600  400 20 20
+insert goodRect2 600  400 20 22
+intersections
+insert goodRect3 25  3 6 6
+regionsearch   0 0 500 500
+regionsearch   300 300 1000 1000
+regionsearch 700 700 1 1
+
+regionsearch -2 -2 1 1
+regionsearch 2 2 1 1
+regionsearch 2 2 1 0
+search goodRect2
+
+remove goodRect2
+
+remove 1 2 3 4
+remove -1 2 3 4
+remove 1 -2 3 4
+remove 1 2 -3 4
+remove 1 2 3 -4
+remove 1025 102 3 4
+remove 102 1025 3 4
+remove 1000 1000 30 4
+remove 1000 1000 3 40
+remove testrec
+intersections
+remove 5 3 56 56
+
+search r_r
+regionsearch  -900 5        0   5000
+abcd
